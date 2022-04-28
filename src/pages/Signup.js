@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import Footer from '../components/Footer'
 import './Signup.css'
 import { publicRequest } from '../api/apiHandle';
+import { Context } from '../store';
 
 function Signup() {
 
@@ -10,19 +11,20 @@ function Signup() {
     const [username,setUsername]=useState("")
     const [password,setPassword]=useState("")
 
-    const [error,setError]=useState(false)
+
+    const {dispatch,isFetching}=useContext(Context)
 
 
     const handleSubmit=async (e)=>{
         e.preventDefault()
-        setError(false)
+        dispatch({type:"LOGIN_START"})
         try{
             const res=await publicRequest.post("/auth/signup",{
                 name,email,username,password
             })
-            res.data && window.location.replace("/")
+            dispatch({type:"LOGIN_SUCCESS",payload:res.data && window.location.replace("/")})
         }catch(err){
-            setError(true)
+            dispatch({type:"LOGIN_FAILURE"})
             alert("Something went wrong!")
         }
     }
@@ -40,7 +42,9 @@ function Signup() {
                     <label className='signup_label'>Password</label>
                     <input className='signup_input' name="password" type="password" onChange={e=>setPassword(e.target.value)} />
                     <div className='signup_buttonContainer'>
-                        <button className='signup_button' type='submit'>CREATE NEW ACCOUNT</button>                    
+                        <button className='signup_button' type='submit'>
+                        {isFetching?<div className="signup_loader"></div>:<div>CREATE NEW ACCOUNT</div>}
+                        </button>
                     </div>
                 </div>
             </form>

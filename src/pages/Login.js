@@ -25,6 +25,7 @@ function Login() {
             res.data && window.location.replace("/")
         }catch(err){
             dispatch({type:"LOGIN_FAILURE"})
+            alert("Something went wrong!")
         }
     }
   return (
