@@ -46,7 +46,3 @@
     cursor: pointer;
 }
 
-.login_button:disabled{
-      background-color: #c0392b;
-      cursor: not-allowed;
-}

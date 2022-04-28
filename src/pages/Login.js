@@ -37,7 +37,9 @@ function Login() {
                     <label className='login_label'>Password</label>
                     <input className='login_input' name="password" type="password" ref={passwordRef} />
                     <div className='login_buttonContainer'>
-                        <button className='login_button' type='submit' disabled={isFetching}>LOGIN</button>
+                        <button className='login_button' type='submit'>
+                        {isFetching?<div className="login_loader"></div>:<div>LOGIN</div>}
+                        </button>
                     </div>
                     <p><Link to='signup'>Signup for New Account</Link></p>
                 </div>
