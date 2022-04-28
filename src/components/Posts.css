@@ -1,0 +1,140 @@
+.posts{
+    flex: 9;
+}
+
+.posts_container{
+    width: 90%;
+    margin: auto;
+}
+.posts_subcontainer{
+    margin: 40px 0;
+}
+
+.posts_innercontainer{
+    display: flex;
+    width: 100%;
+}
+
+.posts_user{
+    text-align: center;
+    margin: 20px auto;
+    font-size: x-large;
+}
+
+.posts_image{
+    width: 400px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 10px;
+}
+
+.posts_infoContainer{
+    flex: 7;
+    margin: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.posts_title{
+    width: fit-content;
+    margin: 15px;
+    font-size: 30px;
+}
+
+.posts_title:hover{
+    text-decoration: underline
+}
+
+.posts_date{
+    margin: 15px;
+    font-style: italic;
+    color: dimgray;
+}
+
+.posts_description{
+    margin: 15px;
+    font-size: 18px;
+    line-height: 25px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+}
+
+.posts_break{
+    width: 90%;
+    background-color: dimgray;
+}
+
+
+.posts_buttonContainer{
+    margin: 20px;
+    text-align: center;
+}
+.posts_button{
+    padding: 15px 20px;
+    font-size: larger;
+    color: white;
+    background-color: rgb(0, 128, 75);
+    border: none;
+    cursor: pointer;
+}
+
+
+/* @media only screen and (max-width: 900px) {
+    .posts{
+        display: grid;
+        grid-template-columns: 1fr 1fr ;
+        column-gap: 20px;
+        row-gap: 60px;
+    }
+
+    .posts_innercontainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: none
+    }
+
+    .posts_image{
+        margin: 0 auto;
+    }
+
+    .posts_infoContainer{
+        text-align: center;
+    }
+  } */
+
+  
+@media only screen and (max-width: 900px) {
+    .posts{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .posts_innercontainer{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        border: none
+    }
+
+    .posts_image{
+        display: block;
+        margin: auto;
+    }
+
+    .posts_infoContainer{
+        text-align: center;
+    }
+
+    .posts_title{
+        display: block;
+        margin: auto;
+    }
+  }

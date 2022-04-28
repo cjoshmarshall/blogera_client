@@ -1,0 +1,38 @@
+.profile{
+    flex:3;
+    margin:0;
+}
+
+.profile_title{
+    margin: 10px;
+    padding: 5px;
+    text-align: center;
+    font-size: larger;
+    border-top:2px solid rgb(140, 140, 140);
+    border-bottom:2px solid rgb(140, 140, 140)
+}
+
+.profile_image{
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin:20px auto;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.profile_user{
+    text-align: center;
+    font-size: x-large;
+}
+
+.profile_bio{
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 1120px) {
+    .profile{
+        display: none;
+    }
+}

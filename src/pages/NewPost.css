@@ -1,0 +1,90 @@
+.newpost_container{
+    padding: 20px;
+}
+
+.newpost_imageContainer{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 86%;
+    height: 340px;
+    outline: 1px solid black;
+    border-radius: 5px;
+}
+
+.newpost_image{
+    margin: 0 auto;
+    width: inherit;
+    height: inherit;
+    border-radius: 5px;
+    object-fit: cover;
+    position: absolute;
+}
+
+.newpost_subcontainer{    
+    margin: 0 200px;
+}
+
+.newpost_inputContainer{
+    display: flex;
+    align-items: center;
+}
+
+.newpost_label{
+    cursor: pointer;
+}
+.newpost_iconLabel{
+    display: flex;
+    align-items: center;
+    padding: 20px 20px 20px 0;
+    font-size: 50px;
+    cursor: pointer;
+}
+
+.newpost_icon{
+    cursor: pointer;
+}
+
+.newpost_fileInput{
+    display: none;
+}
+
+.newpost_titleInput{
+    margin: 10px 0;
+    padding: 20px;
+    width: 100%;
+    font-size: 30px;
+    border: none;
+}
+.newpost_titleInput:focus{
+    outline: none;
+}
+
+.newpost_textareaContainer{
+    margin: 0 auto;
+}
+
+.newpost_textarea{
+    width: 95%;
+    padding: 20px;
+    height: 200px;
+    font-size: 20px;
+    /* border: none; */
+    resize: none;
+}
+.newpost_textarea{
+    outline: none;
+}
+
+.newpost_buttonContainer{
+    margin: 20px;
+    text-align: center;
+}
+.newpost_button{
+    padding: 15px 50px;
+    font-size: larger;
+    color: white;
+    background-color: rgb(0, 128, 75);
+    border: none;
+    cursor: pointer;
+}
