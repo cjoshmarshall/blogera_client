@@ -18,7 +18,14 @@
     margin: 0 30px 30px 30px;
 }
 
-.settings_image{
+.settings_image2{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+}
+
+.settings_image {
+    position: absolute;
     width: 250px;
     height: 250px;
     border-radius: 50%;

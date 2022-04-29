@@ -67,9 +67,12 @@ function Settings() {
         <form className='settings_subcontainer'>
             <div className='settings_innercontainer1'>
                 <div className='settings_imageContainer'>
+                    {file && (
+                    <img src={URL.createObjectURL(file)} alt=' ' className='settings_image' />
+                    )}
                     {user.dp?
-                        <img src={user.dp} alt=' ' className='settings_image' />
-                        :<img src={avatar} alt=' ' className='settings_image' />
+                        <img src={user.dp} alt=' ' className='settings_image2' />
+                        :<img src={avatar} alt=' ' className='settings_image2' />
                     }
                 </div>
                 <div className='settings_usernameContainer'>
