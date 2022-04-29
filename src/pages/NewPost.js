@@ -28,15 +28,12 @@ function NewPost() {
             data.append("file",file)
             try{
                 const uploadImage=await publicRequest.post("/images",data)
-                console.log(uploadImage)
-                console.log(uploadImage.data.imagePath)
                 const filename=BASE_URL+'/images/'+uploadImage.data.imagePath
                 data.append("name",filename)
                 newPost.image=filename
             }catch(err){
                 alert("Something went Wrong")
             }
-            console.log(newPost)
         }
         try{
             const res=await publicRequest.post("/blogs",newPost)

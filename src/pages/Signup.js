@@ -22,7 +22,10 @@ function Signup() {
             const res=await publicRequest.post("/auth/signup",{
                 name,email,username,password
             })
-            dispatch({type:"LOGIN_SUCCESS",payload:res.data && window.location.replace("/")})
+            dispatch({type:"LOGIN_SUCCESS",payload:res.data})
+            localStorage.clear()
+            window.location.replace("/")
+
         }catch(err){
             dispatch({type:"LOGIN_FAILURE"})
             alert("Something went wrong!")

@@ -42,8 +42,6 @@ function Settings() {
             data.append("file",file)
             try{
                 const uploadImage=await publicRequest.post("/images",data)
-                console.log(uploadImage)
-                console.log(uploadImage.data.imagePath)
                 const filename=BASE_URL+'/images/'+uploadImage.data.imagePath
                 data.append("name",filename)
                 updatedUser.dp=filename

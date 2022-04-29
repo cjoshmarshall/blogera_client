@@ -18,7 +18,7 @@ function Home() {
           const res=await publicRequest.get("/blogs"+search)
           setPosts(res.data)
       }catch(err){
-          console.log(err)
+          alert("Something went wrong!")
       }
   }
 
