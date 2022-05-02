@@ -7,11 +7,12 @@ import { BASE_URL, publicRequest } from '../api/apiHandle';
 
 function Settings() {
 
-    const [file,setFile]=useState(null)
+    const [file,setFile]=useState("")
     const [name,setName]=useState("")
     const [username,setUsername]=useState("")
     const [email,setEmail]=useState("")
     const [bio,setBio]=useState("")
+    const [dp,setDp]=useState("")
 
 
     const {user}=useContext(Context)
@@ -23,6 +24,8 @@ function Settings() {
             setUsername(res.data.username);          
             setEmail(res.data.email);          
             setBio(res.data.bio);
+            setFile(res.data.file);
+            setDp(res.data.dp)
         }
         getUser()
     },[])
@@ -51,9 +54,9 @@ function Settings() {
         }
         try{
             const res=await publicRequest.put("/users/"+user._id,updatedUser)
-            window.alert("Updated Succesfully. Changes will be applied the next time you Sign in")
+            alert("Updated Succesfully")
         }catch(err){
-            
+            alert("Something went Wrong")
         }
     }
 
@@ -71,7 +74,7 @@ function Settings() {
                     <img src={URL.createObjectURL(file)} alt=' ' className='settings_image' />
                     )}
                     {user.dp?
-                        <img src={user.dp} alt=' ' className='settings_image2' />
+                        <img src={dp} alt=' ' className='settings_image2' />
                         :<img src={avatar} alt=' ' className='settings_image2' />
                     }
                 </div>

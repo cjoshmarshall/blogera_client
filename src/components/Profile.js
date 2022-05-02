@@ -3,8 +3,8 @@ import "./Profile.css"
 import avatar from '../assets/avatar.jpg'
 
 function Profile({posts}) {
-  console.log(posts)
 
+  
 
   return (
     <div className='profile'>

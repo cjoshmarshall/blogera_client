@@ -1,15 +1,25 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Header.css'
 import SearchIcon from '@mui/icons-material/Search';
 import logo from "../assets/logo.png"
 import avatar from '../assets/avatar.jpg'
 import { Link } from 'react-router-dom'
 import { Context } from '../store';
+import { publicRequest } from '../api/apiHandle';
 
 function Header() {
   
+  const [dp,setDp]=useState("")
+
   const {user}=useContext(Context)
 
+  useEffect(()=>{
+    const getUser=async ()=>{
+        const res=await publicRequest.get("/users/"+user._id)   
+        setDp(res.data.dp)
+    }
+    getUser()
+},[])
 
 
   const handleDropdown=()=>{
@@ -58,7 +68,7 @@ function Header() {
                 </li>
                 <li className='header_imageContainer'>
                   {user.dp?
-                    <img src={user.dp} alt=" "  className='header_image' onClick={handleDropdown} />
+                    <img src={dp} alt=" "  className='header_image' onClick={handleDropdown} />
                     :<img src={avatar} alt=" "  className='header_image' onClick={handleDropdown} />
                   }
                 </li>
